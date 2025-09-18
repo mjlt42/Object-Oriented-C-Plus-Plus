@@ -23,7 +23,7 @@ public:
     RPG(string name, int hits_taken, float luck, float exp, int level);
 
     //mutators
-    bool isAlive() const;
+    const bool isAlive();
     void setHitsTaken(int new_hits);
 
     //accessors
