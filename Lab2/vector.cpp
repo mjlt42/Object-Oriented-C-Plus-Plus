@@ -22,16 +22,19 @@ using namespace std;
   * 
   * @param v - address to a vector of integers
   */
-void incArrBy10(){
-   
+void incArrBy10(vector<int> &v){
+   for(int i = 0; i < v.size(); i++)
+   {
+    v[i]= v[i] += 10;
+   }
 }
 
 int main(){
-   
+
 //create a constant int called SIZE that is of value 5
-
+    const int SIZE = 5; 
 //create a vector of integers called vec that can hold up to 5 elements
-
+    vector<int> vec(SIZE);
 //use a for loop to populate vec with the values 100 to 104
 
 
