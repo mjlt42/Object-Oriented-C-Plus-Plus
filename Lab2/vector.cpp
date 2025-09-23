@@ -9,10 +9,10 @@ using namespace std;
  * @param v - vector of integers
  */
 
- void printMemVec(vector<int> v){
-    printf("Vector - Each int is worth %lu bytes\n", v.size());
+ void printMemVec(vector<int> &v){
+    printf("Vector - Each int is worth %lu bytes\n", sizeof(v[0]));
     for(int i = 0; i < v.size(); i++){
-        printf("Value: %i at Memory Location: %p\n", v[i], &v);
+        printf("Value: %i at Memory Location: %p\n", v[i], &v + i);
     }
 
  }
@@ -38,12 +38,13 @@ int main(){
 //use a for loop to populate vec with the values 100 to 104
     for(int i = 0; i < SIZE; i++)
    {
-    vec.push_back(100 + i);
+    vec[i] = (100 + i);
    }
 
 printf("Before Increment------------\n");
 //call printMemVec(...) on vec
     printMemVec(vec);
+
 //call inBy10(...) on vec
     incVecBy10(vec);
 
