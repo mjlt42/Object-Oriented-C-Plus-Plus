@@ -4,7 +4,7 @@ Used arrays and vectors to print and alter values and their memory locations.
 
 ## Screenshot of array.cpp output
 
-![alt text](images/arrayOuput.png)
+![alt text](images/arrayOutput.png)
 
 
 ## Screenshot of vector.cpp output

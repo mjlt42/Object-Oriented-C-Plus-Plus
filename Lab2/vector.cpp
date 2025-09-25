@@ -12,7 +12,7 @@ using namespace std;
  void printMemVec(vector<int> &v){
     printf("Vector - Each int is worth %lu bytes\n", sizeof(v[0]));
     for(int i = 0; i < v.size(); i++){
-        printf("Value: %i at Memory Location: %p\n", v[i], &v + i);
+        printf("Value: %i at Memory Location: %p\n", v[i], &v[i]);
     }
 
  }
