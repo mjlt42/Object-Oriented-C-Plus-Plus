@@ -1,0 +1,1 @@
+![class comp/clas compOut.png](<clas compOut.png>)
