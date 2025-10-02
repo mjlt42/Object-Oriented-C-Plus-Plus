@@ -7,7 +7,7 @@ using namespace std;
 int main (){
 
 RPG p1 = RPG("Wiz", 0, 0.2, 60, 1);
-RPG p2 = RPG("Knight", 0, 0.1, 70, 1);
+RPG p2 = RPG();
 
 printf("%s Current Stats\n", p1.getName().c_str());
 printf("Hits Taken: %i\t Luck: %f\t Exp: %f\t Level: %i\n", p1.getHitsTaken(), p1.getLuck(), p1.getExp(), p1.getLevel());
