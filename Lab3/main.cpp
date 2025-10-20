@@ -18,7 +18,7 @@ printf("Hits Taken: %i\t Luck: %f\t Exp: %f\t Level: %i\n", p2.getHitsTaken(), p
 
 //call setHitsTaken on either player
 
-p2.setHitsTaken(1);
+p2.setHitsTaken(3);
 
 //print out hits taken
 
