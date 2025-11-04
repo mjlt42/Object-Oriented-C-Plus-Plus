@@ -32,5 +32,12 @@ public:
     const float getLuck();
     const float getExp();
     const int getLevel();
+
+    //Extended
+    void setName(string name);
+    void updateExpLevel();
+    void attack(RPG* opponent);
+    void printStats();
+    ~RPG();
 };
 #endif

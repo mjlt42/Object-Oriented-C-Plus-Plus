@@ -91,3 +91,24 @@ const bool RPG::isAlive(){
     if (hits_taken >= MAX_HITS_TAKEN) return false;
     else return true;
 }
+
+//Extended Functions
+
+/**
+ * @brief updates name
+ * 
+ * @param name
+ */
+void RPG::setName(string name){
+    this->name = name;
+}
+
+/**
+ * @brief increase RPG exp by 50; if RPG exp >= 100.0, increase
+ *        level by 1, reset EXP to 0, and increase luck by 0.1 
+ * 
+ */
+void RPG::updateExpLevel(){
+    exp += 50.0;
+    
+}
