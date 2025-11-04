@@ -110,5 +110,40 @@ void RPG::setName(string name){
  */
 void RPG::updateExpLevel(){
     exp += 50.0;
-    
+    if (exp >= 100.0) level++, exp = 0, luck += 0.1;
 }
+
+/**
+ * @brief Hits or misses at random. Luck is a form of defense. 
+ *        The greater the luck of the opponent, more likely an attack will miss.
+ *        If the attack hits, opponents hit count increases by 1
+ * @param opponent: RPG*
+ */
+void RPG::attack(RPG* opponent){
+
+    random_device rd;
+    mt19937 gen(rd()); //seed
+    uniform_real_distribution<double> dis(0.0, 1.0);
+
+    float random_num = dis(gen);
+
+    bool hit = false;
+
+    if(random_num > HIT_FACTOR * (*opponent).getLuck()) hit = true;
+    if(hit) (*opponent).setHitsTaken((*opponent).getHitsTaken() + 1 );
+}
+
+/**
+ * @brief prints in the format:
+ * "Name: NPC_X    Hits Taken: X   Luck: 0.X00000   Exp: X0.000000 Level: X   Status: Alive or Dead"
+ * 
+ */
+void RPG::printStats(){
+    printf("Name: %s\t Hits Taken: %i\t Luck: %f\t Exp: %f\t Level: %i\t Status: %s\n", name.c_str(), hits_taken, luck, exp, level, ((isAlive) ? "Alive" : "Dead"));
+}
+
+/**
+ * @brief Destroys the RPG::RPG object
+ * 
+ */
+RPG::~RPG(){}

@@ -2,6 +2,7 @@
 #ifndef RPG_H
 #define RPG_H
 #include <string>
+#include <random>
 
 using namespace std;
 const int INVENTORY_SIZE = 10;
