@@ -68,8 +68,9 @@ void Game::endRound(RPG* winner, RPG* loser, int loserIndex){
     int playerIndex1 = selectPlayer();
     int playerIndex2 = selectPlayer();
 
-    while (playerIndex1 == playerIndex2){
-        playerIndex2 = selectPlayer();
+    if (playerIndex1 == playerIndex2){
+        battleRound();
+        return;
     }
 
     RPG* player1 = players[playerIndex1];
@@ -86,3 +87,32 @@ void Game::endRound(RPG* winner, RPG* loser, int loserIndex){
     else endRound(player2, player1, playerIndex1);
     
  }
+ 
+ /**
+  * @brief Runs battleRound() until there is only 1 player alive.
+  * Recall that endRound() shrinks the size of live_players
+  * 
+  */
+ void Game::gameLoop(){
+    while (live_players.size() > 1)
+    {
+        battleRound();
+    }
+ }
+
+ /**
+  * @brief Call printStats on all the players
+  * 
+  */
+ void Game::printFinalResults(){
+    for(int i = 0; i < players.size(); i++){
+        (*players[i]).printStats();
+    }
+ }
+
+ /**
+  * @brief Destroys the Game:: Game object
+  * 
+  */
+ Game::~Game(){}
+ 
