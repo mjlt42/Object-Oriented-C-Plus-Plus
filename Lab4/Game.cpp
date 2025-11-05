@@ -26,7 +26,7 @@ int Game::selectPlayer(){
     
     random_device rd;
     mt19937 gen(rd()); //seed
-    uniform_real_distribution<> dist(0, live_players.size() - 1);
+    uniform_int_distribution<> dist(0, live_players.size() - 1);
 
     int randomIndex = dist(gen); //random index
 
@@ -98,6 +98,7 @@ void Game::endRound(RPG* winner, RPG* loser, int loserIndex){
     {
         battleRound();
     }
+    printf("\n");
  }
 
  /**
@@ -108,6 +109,7 @@ void Game::endRound(RPG* winner, RPG* loser, int loserIndex){
     for(int i = 0; i < players.size(); i++){
         (*players[i]).printStats();
     }
+    printf("\n");
  }
 
  /**
@@ -115,4 +117,3 @@ void Game::endRound(RPG* winner, RPG* loser, int loserIndex){
   * 
   */
  Game::~Game(){}
- 

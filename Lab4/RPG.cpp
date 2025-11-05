@@ -1,6 +1,4 @@
 //RPG.cpp
-#include <iostream>
-#include <string>
 #include "RPG.h"
 
 RPG::RPG(){
@@ -139,8 +137,7 @@ void RPG::attack(RPG* opponent){
  * 
  */
 void RPG::printStats(){
-    bool aliveStat = isAlive;
-    printf("Name: %s\t Hits Taken: %i\t Luck: %f\t Exp: %f\t Level: %i\t Status: %s\n", name.c_str(), hits_taken, luck, exp, level, ((aliveStat) ? "Alive" : "Dead"));
+    printf("Name: %s\t Hits Taken: %i\t Luck: %f\t Exp: %f\t Level: %i\t Status: %s\n", name.c_str(), hits_taken, luck, exp, level, ((isAlive()) ? "Alive" : "Dead"));
 }
 
 /**

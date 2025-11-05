@@ -2,6 +2,7 @@
 #ifndef GAME_H
 #define GAME_H
 #include <string>
+#include <iostream>
 #include <random>
 #include <set>
 #include "RPG.h"
